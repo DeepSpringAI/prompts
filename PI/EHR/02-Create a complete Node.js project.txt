@@ -1,0 +1,64 @@
+### Goal
+Create a complete Node.js project that can:
+1. Serve MainReport.vue in a Vite/Vue 3 app.
+2. Run Playwright e2e tests against that app.
+
+### Output rules – VERY IMPORTANT
+* Return **multiple files**.  
+* Delimit each file with the exact line:  
+  `--- FILE: <relative-path/filename> ---`  
+  (no back-ticks around the delimiter).  
+* After the final file, **stop** – no explanations, no markdown, no comments.
+
+### Files to generate
+1. **package.json**  
+   - Dependencies: vue ^3, axios, tailwindcss, autoprefixer, postcss  
+   - Dev deps: vite, @vitejs/plugin-vue, typescript, @types/node, playwright, @playwright/test  
+   - Scripts:  
+     - `dev` → `vite`  
+     - `build` → `vite build`  
+     - `preview` → `vite preview`  
+     - `test:e2e` → `playwright test`  
+     - `test:e2e:headless` → `playwright test --headed=false`  
+
+2. **vite.config.ts**  
+   - Import and use `defineConfig` and `vue()` plugin.  
+   - Configure `server.port = 5173`.  
+   - Alias `@` to `/src`.
+
+3. **tsconfig.json** (strict + jsx = “preserve”).
+
+4. **tailwind.config.cjs**, **postcss.config.cjs** (basic Tailwind setup).
+
+5. **playwright.config.ts**  
+   - Use `@playwright/test`.  
+   - `use.baseURL = "http://localhost:5173"`  
+   - `webServer` section that runs `npm run dev` before tests.
+
+6. **tests/e2e/MainReport.spec.ts**  
+   - Launch page.  
+   - Assert that it shows tab bar with first two labels from sample JSON (“HPI”, “SLP”).  
+   - Click **Next** button and verify tab change.  
+   - Optionally, fill a checkbox and click **Save** to check network request (route.waitFor).
+
+7. **src/components/MainReport.vue** – *assume this already exists* (generated in the previous step).  
+   - Import it from `src/main.ts`, so the entry mounts `<MainReport />`.
+
+8. **src/main.ts** – standard Vite bootstrap with `createApp(MainReport).mount('#app')`.
+
+9. **index.html** – minimal template; include Tailwind via `@tailwind base | components | utilities`.
+
+10. **.gitignore** – ignore `node_modules`, `dist`, `.cache`, `test-results`.
+
+11. **README.md** – short “How to run dev server & tests” (optional but handy).
+
+### Sample JSON for tests
+Reuse the same sample JSON you gave earlier. Place it in `tests/fixtures/sampleReport.json`.
+
+### Coding conventions
+* All TypeScript files use `lang="ts"`.
+* Use ESM `import` syntax everywhere.
+* Do **NOT** inline comments inside JSON blocks.
+* Keep each file as small as practical but fully functional.
+
+### Begin.

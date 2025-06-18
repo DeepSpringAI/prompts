@@ -1,0 +1,84 @@
+### Goal
+Generate the **main Vue 3 single-file component** (Composition API) for an electronic-health-report (EHR) app.  
+The UI is driven by a large nested JSON schema (~4 000 widgets) that is split into logical *sections* (“HPI”, “SLP”, “ObjectiveExam”, …).  
+The main component must:
+
+1. Render a **tab bar** whose labels come from an ordered array of section codes.
+2. When a tab is selected, **lazy-load** the matching section component (`HPI.vue`, `SLP.vue`, etc.) with `<Suspense>` + `defineAsyncComponent`.
+3. Pass these props to every section:  
+   - `reportId` – integer ID for the current report  
+   - `sectionCode` – one of the codes above
+4. Provide two buttons:  
+   - **Save** → call `saveCurrentTabData()` on the active section via `$refs`  
+   - **Next / Previous** tab shortcuts
+5. Expose `saveCurrentTabData()` that:
+   ```ts
+   // 1) Finds the active async component via template ref
+   // 2) Awaits its local save method
+   // 3) Emits "saved" with { sectionCode, ok: true }
+Emit finish when the final tab is saved.
+
+Use Tailwind classes for a clean, responsive layout (tabs along the top, controls fixed bottom-right on mobile & desktop).
+
+Provide stubs for Axios calls (/api/loadReport & /api/saveReport) but do not hard-code URLs – leave BASE_URL constant at top.
+
+Type-annotate with JSDoc or TypeScript (either is fine) and include short inline docs for every public method.
+
+Add a minimal <script setup> demo block that, if DEV_MODE === true, fetches a sample JSON (supplied below) and logs the parsed result so the playground instantly shows that the component mounts.
+
+Sample JSON (for quick tests only)
+json
+Copy
+Edit
+{
+  "HPI": [
+    {
+      "id": "hpi-1",
+      "type": "dropdown",
+      "label": "History of Present Illness",
+      "content": [
+        {
+          "id": "hpi-1-a",
+          "type": "checkbox",
+          "label": "Onset ≤ 24 h",
+          "isChecked": false
+        },
+        {
+          "id": "hpi-1-b",
+          "type": "text",
+          "label": "Chief concern",
+          "input": { "value": "" }
+        }
+      ]
+    }
+  ],
+  "SLP": [
+    {
+      "id": "slp-intro",
+      "type": "text",
+      "label": "Speech-Language Pathology Findings"
+    }
+  ]
+}
+File name and format
+Return one Vue single-file component named MainReport.vue using <script setup lang="ts"> and <template> sections only.
+
+Output
+Just the contents of MainReport.vue – no extra commentary.
+
+pgsql
+Copy
+Edit
+
+---
+
+### How this prompt is structured & why it works
+
+| Prompt section | Purpose |
+|----------------|---------|
+| **Goal**       | Gives Codex high-level context so it understands *what* the component must solve. |
+| **Checklist (1-10)** | Turns requirements into explicit, testable tasks. Codex performs best when each responsibility is itemised. |
+| **Sample JSON**| Lets Codex create realistic fetch / log code and helps you copy-paste straight into a sandbox for a smoke test. |
+| **File name & Output rules** | Prevents Codex from wrapping the code in Markdown or adding commentary. This makes the result drop-in ready. |
+
+Feel free to tweak the checklist as you refine lower-level components; just keep the same explicit, bullet-style format so Codex stays deterministic while you build out the hierarchy.
