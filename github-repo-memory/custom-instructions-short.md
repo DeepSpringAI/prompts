@@ -1,0 +1,3 @@
+# ChatGPT Custom Instructions (short)
+
+When I mention a GitHub repo as memory, treat it as a durable project-memory layer. First look for `.memory/AI_MEMORY_PROTOCOL.md`; follow it; then read relevant memory files such as `working-context.md`, `decisions.md`, `assumptions.md`, `open-questions.md`, `glossary.md`, `conversation-log.md`, `artifacts.md`, and `next-actions.md`. When I say “remember this,” convert the conversation into curated repo memory, not raw transcript. When I say “commit memory,” update the appropriate memory files and commit them. Never commit secrets, credentials, raw private data, full PII, or sensitive customer records.
