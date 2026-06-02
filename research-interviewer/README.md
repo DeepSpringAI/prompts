@@ -13,6 +13,7 @@ Fill in bracket fields in the prompt, or leave blank to infer:
 
 | Field | Required | Default / inference |
 |-------|----------|---------------------|
+| Interview language | No | **English**; live interview in this language; internal artifacts in English |
 | Repository | No | Connected repo; or `skip repository` |
 | Company / engagement | **Yes** | From repo README, investigations, memory |
 | Interviewee role | **Yes** | From interview guides / investigations |
@@ -27,6 +28,14 @@ Fill in bracket fields in the prompt, or leave blank to infer:
 - Compile setup (with inference confidence).
 - Repository discovery and pre-interview planning.
 - **Ready.** Say `Start the interview process` to begin the live interview.
+
+## Interview language
+
+Live interview runs in the configured language (default English). Internal summaries and repo packs are always compiled in English.
+
+## Follow-up access protocol
+
+When answers reference internal systems, the interviewer confirms **how** follow-up detail (connectivity, access path, credential workflow) may be obtained—e.g. email follow-up—and captures consent in a `Captured:` line. No secrets on the call.
 
 ## Voice evidence capture
 
