@@ -5,6 +5,7 @@ Generic research interviewer with **SMART SETUP** and **Captured:** evidence lin
 | File | Use |
 |------|-----|
 | [RESEARCH_INTERVIEWER.md](RESEARCH_INTERVIEWER.md) | Full prompt — fill the **Inputs** block or leave fields blank for inference |
+| [PI_MDC_BILLING_APPEAL_SESSION_1.md](PI_MDC_BILLING_APPEAL_SESSION_1.md) | PI/MDC billing appeals — Session 1; pre-loaded context, no question limit, selective `Captured:` lines |
 | [custom-instructions-short.md](custom-instructions-short.md) | Short version for ChatGPT **Custom Instructions** |
 
 ## Inputs block
@@ -50,9 +51,15 @@ Post-interview compilation must use these lines when the transcript shows `[Audi
 - **Live end:** “Thank you. The interview is complete. You may click End.”
 - **Compile:** e.g. `Generate internal interview summary and repo memory pack using the captured evidence lines`
 
+## PI/MDC Session 1
+
+Pre-loaded engagement context (AMD, CIGNA MA, denial worklists). No SMART setup; on load say only *Say 'Start the interview process' when you want to begin.* Evidence capture is **selective** (skip vague answers). No question cap — end when the research question is answered.
+
 ## Share links (public repo)
 
 ```text
 https://github.com/DeepSpringAI/prompts/blob/main/research-interviewer/RESEARCH_INTERVIEWER.md
 https://raw.githubusercontent.com/DeepSpringAI/prompts/main/research-interviewer/RESEARCH_INTERVIEWER.md
+https://github.com/DeepSpringAI/prompts/blob/main/research-interviewer/PI_MDC_BILLING_APPEAL_SESSION_1.md
+https://raw.githubusercontent.com/DeepSpringAI/prompts/main/research-interviewer/PI_MDC_BILLING_APPEAL_SESSION_1.md
 ```
