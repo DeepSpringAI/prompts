@@ -1,6 +1,114 @@
-# Research Interviewer (SMART SETUP)
+# Research Interviewer — ChatGPT (voice / conversational)
 
-**ChatGPT:** [RESEARCH_INTERVIEWER_CHATGPT.md](RESEARCH_INTERVIEWER_CHATGPT.md) — operator runbook (GitHub **+**, one repo, video call + separate capture) and paste prompt below `---`.
+**Canonical spec:** [RESEARCH_INTERVIEWER.md](RESEARCH_INTERVIEWER.md) (keep in sync).
+
+This file is the **operator runbook** plus the **paste prompt**. Follow the runbook on the desktop/laptop ChatGPT session; use the prompt section (below `---`) as the instructions ChatGPT follows.
+
+---
+
+## Operator runbook (start here)
+
+### Phase 1 — Connect the right GitHub repo in ChatGPT
+
+1. Open **ChatGPT** in the browser (or desktop app).
+2. Start a **new** conversation.
+3. Click the **+** (attach / tools) control, then choose the **GitHub** icon.
+4. Open the **GitHub connection dropdown** and check which repositories are connected.
+   - You may see repos from a **previous** session or the wrong project.
+   - **Disconnect** any repo you do not need for this interview.
+   - **Connect exactly one** repository—the engagement repo for this interview (e.g. `owner/repo`).
+5. Confirm only that one repo is connected before you paste the prompt.
+
+ChatGPT uses this connection for SMART SETUP: repository name, README, interview guides, investigations, and memory files.
+
+### Phase 2 — Paste the interviewer prompt
+
+1. In this folder, open **[RESEARCH_INTERVIEWER.md](RESEARCH_INTERVIEWER.md)** (canonical) or copy from **below the `---` line in this file** (same content).
+2. Paste the full prompt as your **first message** in the ChatGPT thread (or put it in a ChatGPT **Project** if you reuse the same engagement).
+3. In the **Inputs** block you may leave fields blank when GitHub is connected—ChatGPT should infer:
+   - Repository (from the connected repo)
+   - Company / engagement
+   - Interviewee role
+   - Research question
+   - Known context
+4. Answer any **clarification** questions if inference is ambiguous (multiple research questions, unclear role, etc.).
+5. Wait until setup finishes (pre-interview gate: repo discovery, internal question plan). ChatGPT will say:
+
+   **Ready. Say ‘Start the interview process’ when you want to begin.**
+
+Do **not** say Ready yourself; ChatGPT says it only when setup is complete.
+
+### Phase 3 — Run the live interview (video + separate capture)
+
+Before you say **`Start the interview process`**, prepare how you will **preserve the interviewee’s spoken answers**. ChatGPT voice turns often **do not** transcribe or persist interviewee audio in the thread—you need an independent recording or transcript.
+
+**Video call (recommended for the human conversation)**
+
+- Run the interview on **Zoom**, **Microsoft Teams**, or **Google Meet** with the interviewee.
+- **Record** the meeting (cloud recording or local) **or** ensure another capture path below is running.
+
+**Parallel capture options (pick at least one)**
+
+| Method | How |
+|--------|-----|
+| **Meeting recording** | Zoom / Teams / Meet recording → transcript after the call |
+| **Mobile ChatGPT voice** | On your phone: new ChatGPT chat → **microphone** / voice mode. ChatGPT can capture **long, accurate** spoken conversation on device; use this as a dedicated capture channel while you conduct the interview on video |
+| **Other** | Approved note-taker, otter.ai-style tool, or manual notes—anything that keeps interviewee answers outside ChatGPT’s missing-audio gaps |
+
+**Desktop ChatGPT role during the call**
+
+- Use the **same** ChatGPT thread where you pasted the prompt (with GitHub connected).
+- Say **`Start the interview process`** when you and the interviewee are on the call and capture is running.
+- ChatGPT asks **one question at a time**; it should **not** read `Captured:` lines aloud (brief acknowledgment + next question only).
+- You relay questions to the interviewee and their answers back into ChatGPT (typed or voice), as your workflow allows.
+
+### Phase 4 — After the interview
+
+**A. Internal summary in ChatGPT (desktop thread)**
+
+In the **same** ChatGPT conversation, send:
+
+`Generate internal interview summary and repo memory pack`
+
+ChatGPT should emit `Captured:` lines, key facts, follow-up access protocol, open questions, and suggested repo updates—reconstructed from the session and its internal evidence log.
+
+**B. Transcript from your capture channel**
+
+From Zoom/Teams/Meet recording, mobile voice capture export, or manual notes, produce a **full or cleaned transcript** of what the interviewee actually said.
+
+**C. One comprehensive report**
+
+Merge:
+
+- ChatGPT **internal summary** and `Captured:` evidence
+- **Independent transcript** (source of truth for wording and quotes)
+
+Resolve gaps where ChatGPT shows `[Audio response not available as text]` or missing turns—prefer the external transcript.
+
+**D. Add to GitHub**
+
+Commit the combined report (and any memory claims / investigation updates) to the **same** repo you connected in Phase 1, following that repo’s conventions (`investigations/`, `memory/`, `docs/`, etc.).
+
+---
+
+## Quick reference (prompt behavior)
+
+| Step | Action |
+|------|--------|
+| Connect GitHub | **+** → GitHub → dropdown → **one** correct repo only |
+| Paste prompt | [RESEARCH_INTERVIEWER.md](RESEARCH_INTERVIEWER.md) or below `---` |
+| Setup | Infer from repo; clarify if needed; wait for **Ready** |
+| Live | Zoom/Teams/Meet + **separate** capture; then `Start the interview process` |
+| Compile | `Generate internal interview summary and repo memory pack` |
+| Deliverable | Summary + transcript → one report → push to GitHub |
+
+---
+
+## Paste prompt (copy everything below this line into ChatGPT)
+
+---
+
+# Research Interviewer (SMART SETUP)
 
 ## Inputs
 
