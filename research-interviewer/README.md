@@ -7,6 +7,7 @@ Generic research interviewer with **SMART SETUP**, pre-interview setup gate, and
 | [RESEARCH_INTERVIEWER_CHATGPT.md](RESEARCH_INTERVIEWER_CHATGPT.md) | **Operator runbook** (GitHub **+**, one repo, Zoom/Meet + mobile capture) + paste prompt below `---` |
 | [RESEARCH_INTERVIEWER.md](RESEARCH_INTERVIEWER.md) | Canonical spec (edit here; keep ChatGPT file in sync) |
 | [PI_MDC_BILLING_APPEAL_SESSION_1.md](PI_MDC_BILLING_APPEAL_SESSION_1.md) | PI/MDC billing appeals — Session 1; pre-loaded context, no question limit, selective `Captured:` lines |
+| [PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md](PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md) | PI/MDC appeals — Joe follow-up (15–30 min); self-contained Victoria/Claudia context, no early exit |
 | [custom-instructions-short.md](custom-instructions-short.md) | Short version for ChatGPT **Custom Instructions** |
 
 ## Inputs block
@@ -64,6 +65,10 @@ See **[RESEARCH_INTERVIEWER_CHATGPT.md](RESEARCH_INTERVIEWER_CHATGPT.md)** for t
 
 Pre-loaded engagement context (AMD, CIGNA MA, denial worklists). No SMART setup; on load say only *Say 'Start the interview process' when you want to begin.* Evidence capture is **selective** (skip vague answers). No question cap — end when the research question is answered.
 
+## PI/MDC Joe follow-up
+
+Paste [PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md](PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md) directly into ChatGPT for a live voice follow-up with Joe. Self-contained prior context from Victoria and Claudia (2026-06-09); do not repeat basics. Target 15–30 minutes; Sections 1–5 are priority if time is short. Includes completion rules to avoid ending early after process confirmation only.
+
 ## Share links (public repo)
 
 ```text
@@ -73,4 +78,6 @@ https://github.com/DeepSpringAI/prompts/blob/main/research-interviewer/RESEARCH_
 https://raw.githubusercontent.com/DeepSpringAI/prompts/main/research-interviewer/RESEARCH_INTERVIEWER.md
 https://github.com/DeepSpringAI/prompts/blob/main/research-interviewer/PI_MDC_BILLING_APPEAL_SESSION_1.md
 https://raw.githubusercontent.com/DeepSpringAI/prompts/main/research-interviewer/PI_MDC_BILLING_APPEAL_SESSION_1.md
+https://github.com/DeepSpringAI/prompts/blob/main/research-interviewer/PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md
+https://raw.githubusercontent.com/DeepSpringAI/prompts/main/research-interviewer/PI_MDC_JOE_APPEAL_FOLLOW_UP_INTERVIEW_GUIDE.md
 ```
